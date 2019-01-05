@@ -10,6 +10,11 @@
 
   <body>
     <div class="container">
+      <% if flash[:notice].present? %>
+        <div class="alert alert-success">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
       <div class="page-header">
       <h1>Books</h1>
       </div>
