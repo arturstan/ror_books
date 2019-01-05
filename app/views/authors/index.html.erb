@@ -1,0 +1,26 @@
+<h3>Authors</h3>
+
+<p><%= link_to "New author", new_author_path, class: "btn btn-success" %> </p>
+
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% @authors.each do |author| %>
+    <tr>
+        <td><%= author.id %></td>
+        <td><%= author.name %></td>
+        <td><%= author.surname %></td>
+        <td>
+
+        </td>
+    </tr>
+    <% end %>
+    </tbody>
+</table>
