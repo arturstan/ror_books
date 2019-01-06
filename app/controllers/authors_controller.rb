@@ -5,9 +5,12 @@ class AuthorsController < ApplicationController
 
   def create
     @author = Author.new(author_params)
-    @author.save
-    flash[:notice] = "Author saved"
-    redirect_to authors_path
+    if @author.save
+      flash[:notice] = "Author saved"
+      redirect_to authors_path
+    else
+      render action: 'new'
+    end
   end
 
   def edit
@@ -16,9 +19,12 @@ class AuthorsController < ApplicationController
 
   def update
     @author = Author.find(params[:id])
-    @author.update_attributes(author_params)
-    flash[:notice] = "Author changed"
-    redirect_to authors_path
+    if @author.update_attributes(author_params)      
+      flash[:notice] = "Author changed"
+      redirect_to authors_path
+    else
+      render action: 'edit'
+    end
   end
 
   def index
