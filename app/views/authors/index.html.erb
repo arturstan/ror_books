@@ -19,6 +19,7 @@
         <td><%= author.surname %></td>
         <td>
         <%= link_to "Show", author_path(author), class: "btn btn-default btn-xs" %>
+        <%= link_to "Edit", edit_author_path(author), class: "btn btn-primary btn-xs" %>
         </td>
     </tr>
     <% end %>
