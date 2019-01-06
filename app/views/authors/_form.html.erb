@@ -1,0 +1,11 @@
+<%= form_for @author do |f| %>
+<div> 
+    <%= f.label :name, "Name" %>
+    <%= f.text_field :name , class: "form-control "%>
+</div>
+<div> 
+    <%= f.label :name, "Surname" %>
+    <%= f.text_field :surname , class: "form-control "%>
+</div>
+<%= f.submit button_name, class: "btn btn-primary" %>
+<% end %>

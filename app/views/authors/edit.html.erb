@@ -1,11 +1,2 @@
-<%= form_for @author do |f| %>
-<div> 
-    <%= f.label :name, "Name" %>
-    <%= f.text_field :name , class: "form-control "%>
-</div>
-<div> 
-    <%= f.label :name, "Surname" %>
-    <%= f.text_field :surname , class: "form-control "%>
-</div>
-<%= f.submit "Save changes", class: "btn btn-primary" %>
-<% end %>
+<h3>Edit author</h3>
+<%= render partial: "form", locals: { button_name: "Save changes" } %>
