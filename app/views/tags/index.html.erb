@@ -1,0 +1,24 @@
+<h3>Tags</h3>
+
+<p><%= link_to "New tag", new_tag_path, class: "btn btn-success" %> </p>
+
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% @tags.each do |tag| %>
+    <tr>
+        <td><%= tag.id %></td>
+        <td><%= tag.name %></td>
+        <td>
+        <%= link_to "Edit", edit_tag_path(tag), class: "btn btn-primary btn-xs" %>
+        <%= link_to "Delete", tag_path(tag), method: :delete, class: "btn btn-danger btn-xs", data: { confirm: "Are you sure?" } %>
+        </td>
+    </tr>
+    <% end %>
+    </tbody>
+</table>

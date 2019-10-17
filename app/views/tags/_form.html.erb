@@ -1,0 +1,18 @@
+<% if @tag.errors.present? %>
+    <div class="alert alert-danger">
+        <p>Errors:</p>
+        <ol>
+            <% @tag.errors.full_messages.each do |message| %>
+            <!--<li><%= message.titleize %></li> -->
+            <li><%= message %></li>
+            <% end %>
+        </ol>
+    </div>
+<% end %>
+<%= form_for @tag do |f| %>
+<div> 
+    <%= f.label :name, "Name" %>
+    <%= f.text_field :name , class: "form-control "%>
+</div>
+<%= f.submit button_name, class: "btn btn-primary" %>
+<% end %>
