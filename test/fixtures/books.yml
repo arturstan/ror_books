@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  author: one
+  status: 
+  why_want_read: MyText
+  review: MyText
+  raiting: 
+  data_insert: 2019-11-03
+  date_start_reading: 2019-11-03
+  date_finish_reading: 2019-11-03
+
+two:
+  title: MyString
+  author: two
+  status: 
+  why_want_read: MyText
+  review: MyText
+  raiting: 
+  data_insert: 2019-11-03
+  date_start_reading: 2019-11-03
+  date_finish_reading: 2019-11-03

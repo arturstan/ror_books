@@ -1,0 +1,62 @@
+<%= form_with(model: book, local: true) do |form| %>
+  <% if book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+      <% book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :book_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :author_id %>
+    <%= form.text_field :author_id, id: :book_author_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status, id: :book_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :why_want_read %>
+    <%= form.text_area :why_want_read, id: :book_why_want_read %>
+  </div>
+
+  <div class="field">
+    <%= form.label :review %>
+    <%= form.text_area :review, id: :book_review %>
+  </div>
+
+  <div class="field">
+    <%= form.label :raiting %>
+    <%= form.text_field :raiting, id: :book_raiting %>
+  </div>
+
+  <div class="field">
+    <%= form.label :data_insert %>
+    <%= form.date_select :data_insert, id: :book_data_insert %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_start_reading %>
+    <%= form.date_select :date_start_reading, id: :book_date_start_reading %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_finish_reading %>
+    <%= form.date_select :date_finish_reading, id: :book_date_finish_reading %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

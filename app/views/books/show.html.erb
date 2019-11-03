@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @book.title %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @book.author %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @book.status %>
+</p>
+
+<p>
+  <strong>Why want read:</strong>
+  <%= @book.why_want_read %>
+</p>
+
+<p>
+  <strong>Review:</strong>
+  <%= @book.review %>
+</p>
+
+<p>
+  <strong>Raiting:</strong>
+  <%= @book.raiting %>
+</p>
+
+<p>
+  <strong>Data insert:</strong>
+  <%= @book.data_insert %>
+</p>
+
+<p>
+  <strong>Date start reading:</strong>
+  <%= @book.date_start_reading %>
+</p>
+
+<p>
+  <strong>Date finish reading:</strong>
+  <%= @book.date_finish_reading %>
+</p>
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>
