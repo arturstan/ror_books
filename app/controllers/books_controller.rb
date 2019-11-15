@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
+  before_action :authors_all, only: [:show, :edit, :new]
 
   # GET /books
   # GET /books.json
@@ -10,6 +11,7 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
+
   end
 
   # GET /books/new
@@ -25,16 +27,22 @@ class BooksController < ApplicationController
   # POST /books.json
   def create
     @book = Book.new(book_params)
+    @book.date_insert = DateTime.now.to_date
+    # @book.status = "queue"
 
-    respond_to do |format|
+    # respond_to do |format|
       if @book.save
-        format.html { redirect_to @book, notice: 'Book was successfully created.' }
-        format.json { render :show, status: :created, location: @book }
+        # format.html { redirect_to @book, notice: 'Book was successfully created.' }
+        # format.json { render :show, status: :created, location: @book }
+        flash[:notice] = "Book saved"
+        redirect_to books_path
       else
-        format.html { render :new }
-        format.json { render json: @book.errors, status: :unprocessable_entity }
+        authors_all
+        # format.html { render :new }
+        # format.json { render json: @book.errors, status: :unprocessable_entity }        
+        render action: 'new'
       end
-    end
+    # end
   end
 
   # PATCH/PUT /books/1
@@ -67,8 +75,16 @@ class BooksController < ApplicationController
       @book = Book.find(params[:id])
     end
 
+    def authors_all
+      @authors = Author.all
+    end
+
+    def set_statuses
+      @statuses = Book.status.map
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:title, :author_id, :status, :why_want_read, :review, :raiting, :data_insert, :date_start_reading, :date_finish_reading)
+      params.require(:book).permit(:title, :author_id, :status, :why_want_read, :review, :raiting, :date_insert, :date_start_reading, :date_finish_reading)
     end
 end

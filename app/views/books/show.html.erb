@@ -7,7 +7,7 @@
 
 <p>
   <strong>Author:</strong>
-  <%= @book.author %>
+  <%= @book.author.name + ' ' + @book.author.surname %>
 </p>
 
 <p>
@@ -31,8 +31,8 @@
 </p>
 
 <p>
-  <strong>Data insert:</strong>
-  <%= @book.data_insert %>
+  <strong>Date insert:</strong>
+  <%= @book.date_insert %>
 </p>
 
 <p>

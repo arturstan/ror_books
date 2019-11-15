@@ -22,11 +22,11 @@ ActiveRecord::Schema.define(version: 20191103070404) do
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.integer "author_id", null: false
-    t.integer "status"
+    t.integer "status", null: false
     t.text "why_want_read"
     t.text "review"
     t.integer "raiting"
-    t.date "data_insert", null: false
+    t.date "date_insert", null: false
     t.date "date_start_reading"
     t.date "date_finish_reading"
     t.datetime "created_at", null: false
