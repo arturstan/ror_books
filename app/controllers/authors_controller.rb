@@ -1,4 +1,6 @@
 class AuthorsController < ApplicationController
+    before_action :find_author, only: [:edit, :update, :show, :destroy]
+
   def new
     @author = Author.new
   end
@@ -14,11 +16,10 @@ class AuthorsController < ApplicationController
   end
 
   def edit
-    @author = Author.find(params[:id])
+    
   end
 
   def update
-    @author = Author.find(params[:id])
     if @author.update_attributes(author_params)      
       flash[:notice] = "Author changed"
       redirect_to authors_path
@@ -32,11 +33,10 @@ class AuthorsController < ApplicationController
   end
 
   def show
-    @author = Author.find(params[:id])
+    
   end
 
   def destroy
-    @author = Author.find(params[:id])
     @author.destroy
     flash[:notice] = "Author deleted"
     redirect_to authors_path
@@ -46,5 +46,9 @@ class AuthorsController < ApplicationController
 
   def author_params
     params.require(:author).permit(:name, :surname)
+  end
+
+  def find_author
+    @author = Author.find(params[:id])
   end
 end
