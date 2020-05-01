@@ -18,5 +18,8 @@
     <%= f.label :name, "Surname" %>
     <%= f.text_field :surname , class: "form-control "%>
 </div>
-<%= f.submit button_name, class: "btn btn-primary" %>
+<div>
+    <%= f.submit button_name, class: "btn btn-primary" %>
+    <%= link_to "Cancel", authors_path, class: "btn btn-danger" %>
+</div>
 <% end %>

@@ -14,5 +14,8 @@
     <%= f.label :name, "Name" %>
     <%= f.text_field :name , class: "form-control "%>
 </div>
-<%= f.submit button_name, class: "btn btn-primary" %>
+<div>
+    <%= f.submit button_name, class: "btn btn-primary" %>
+    <%= link_to "Cancel", tags_path, class: "btn btn-danger" %>
+</div>
 <% end %>
