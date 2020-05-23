@@ -28,6 +28,7 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     @book.date_insert = DateTime.now.to_date
+    @book.status=@book.status.to_i
     # @book.status = "queue"
 
     # respond_to do |format|
@@ -48,6 +49,8 @@ class BooksController < ApplicationController
   # PATCH/PUT /books/1
   # PATCH/PUT /books/1.json
   def update
+    #@book.status = Book.read_statuses.index(@book.status).to_i
+
     respond_to do |format|
       if @book.update(book_params)
         format.html { redirect_to @book, notice: 'Book was successfully updated.' }

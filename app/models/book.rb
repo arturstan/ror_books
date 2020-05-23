@@ -3,6 +3,11 @@ class Book < ApplicationRecord
   validates :title, presence: true
   validates :author, presence: true
   validates :status, presence: true
-  enum status: {queue: "queue 2", reading: "reading 2", suspended: "suspended 2", read: "read 2"} #, _prefix: :status
-  STATUS_SELECT = statuses.map {|r| [r.second.to_s, statuses.index(r.second)] }
+  
+  enum read_status: {queue: "queue desc", reading: "reading", suspended: "suspended", read: "read"} #, _prefix: :status
+  STATUS_SELECT = read_statuses.map.with_index {|r, i| [r.second.to_s, i] }
+
+  def status_desc
+    Book.read_statuses.map {|r| [r] }[status].first.second.to_s
+  end
 end

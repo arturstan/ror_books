@@ -20,7 +20,7 @@
       <tr>
         <td><%= book.title %></td>
         <td><%= book.author.name + ' ' + book.author.surname %></td>
-        <td><%= book.status %></td>
+        <td><%= book.status_desc %></td>
         <td><%= book.raiting %></td>
         <td>
         <%= link_to "Show", book_path(book), class: "btn btn-default btn-xs" %>

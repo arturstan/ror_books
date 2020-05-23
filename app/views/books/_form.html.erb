@@ -28,8 +28,6 @@
 
   <div> 
       <%= f.label :status, "Status" %>
-      <%# <%=@book.status?%>
-      <%# <%=Book.const_get(:STATUS_SELECT).last%>
       <% if @book.status? %>
         <%= f.select :status , Book.const_get(:STATUS_SELECT), { }, class: "form-control " %>
       <% else %>
