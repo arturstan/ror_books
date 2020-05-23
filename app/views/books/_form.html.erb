@@ -36,5 +36,31 @@
       <% end %>
   </div>
 
+  <div> 
+      <%= f.label :raiting, "Raiitng" %>
+      <%= f.number_field :raiting, class: "form-control "%>
+  </div>
+
+   <div> 
+      <%= f.label :why_want_read, "Why want read" %>
+      <%= f.text_area :why_want_read, class: "form-control "%>
+  </div>
+
+   <div> 
+      <%= f.label :date_start_reading, "Date start reading" %>
+      <%= f.date_field :date_start_reading, :placeholder => 'yyyy-mm-dd', class: 'form-control datepicker' %>
+  </div>
+
+   <div> 
+      <%= f.label :date_finish_reading, "Date finish reading" %>
+      <%= f.date_field :date_finish_reading, :placeholder => 'yyyy-mm-dd', class: 'form-control datepicker' %>
+  </div>
+
  <%= f.submit button_name, class: "btn btn-primary" %>
  <% end %>
+
+ <script>
+ $( document ).ready(function() {
+    $('.datepicker').datepicker({format: 'yyyy-mm-dd'});
+  });
+</script>
